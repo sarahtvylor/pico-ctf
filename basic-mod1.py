@@ -1,8 +1,16 @@
 def get_flag(flag_array):
+    '''
+        Funtion takes decoded array of chars from message.
+        Outputs flag as string.
+    '''
     flag = "".join(flag_array)
     return "picoCTF{"+flag+"}"
 
 def decode_message(msg):
+    '''
+        Function takes encoded message string.
+        Outputs array of decoded chars.
+    '''
     msg = msg.split(" ")
     decoded_msg = []
 

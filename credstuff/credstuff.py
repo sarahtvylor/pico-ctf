@@ -1,12 +1,15 @@
+import codecs
 
-# with open('''usernames.txt''', 'r') as users_f:
-#     with open('''passwords.txt''', 'r') as pass_f:
-#         user = users_f.readline()
-#         pwd = pass_f.readline()
-#         if user == "cultiris":
-#             print(user+":"+pwd)
-#         users_f.close()
-#         pass_f.close()
+users_f = open('credstuff/usernames.txt', 'r')
+pass_f = open('credstuff/passwords.txt', 'r')
+while True:
+    user = users_f.readline()
+    pwd = pass_f.readline()
+    if user == "cultiris\n":
+        break
 
-with open("usernames.txt") as f:
-    f.read()
+print(user.replace("\n","")+":"+pwd)
+users_f.close()
+pass_f.close()
+
+print(codecs.decode(pwd, "rot_13"))
